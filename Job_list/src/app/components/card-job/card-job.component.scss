@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
+
+.card_job {
+    max-width: 1440px;
+    width: 100%;
+    padding: 40px 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+
+    .image {
+        img {
+            max-width: 70px;
+            width: 100%;
+        }
+    }
+
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+
+        .company {
+            p {
+                color: hsl(180, 29%, 50%);
+                ;
+                font-family: "League Spartan", sans-serif;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+
+        .function {
+            h3 {
+                font-family: "League Spartan", sans-serif;
+
+            }
+
+            &:hover {
+                color: hsl(180, 29%, 50%);
+                ;
+            }
+        }
+
+        .location_time {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            align-items: center;
+
+            p {
+                font-family: "League Spartan", sans-serif;
+                font-size: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: hsl(180, 8%, 52%)
+            }
+        }
+    }
+
+    .skills {}
+
+
+    &:hover {
+        border-left: 5px solid hsl(180, 29%, 50%);
+        cursor: pointer;
+
+
+        -webkit-box-shadow: 8px 0px 126px -37px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 8px 0px 126px -37px rgba(0, 0, 0, 0.75);
+        box-shadow: 8px 0px 126px -37px rgba(0, 0, 0, 0.75);
+    }
+
+
+}

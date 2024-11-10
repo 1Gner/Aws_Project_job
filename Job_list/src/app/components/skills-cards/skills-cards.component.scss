@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
+
+
+.skill_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+
+
+    .name {
+        display: flex;
+      
+
+        button{
+            background-color: hsl(180, 52%, 96%);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-family: "League Spartan", sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            color: hsl(180, 29%, 50%);
+            cursor: pointer;
+
+            &:hover{
+                color:white;
+                background-color: hsl(180, 29%, 50%);
+                transition:  all 0.4s ease;
+            }
+        }
+
+    
+
+      
+    }
+
+}

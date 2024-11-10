@@ -37,10 +37,15 @@
           
 
 
-            .filters {}
+            .filters {
+                display: flex;
+                gap:10px;
+                overflow: hidden;
+            }
 
             .clear {
                 button {
+                    margin-left: 10px;
                     background-color: transparent;
                     border: none;
                     cursor: pointer;

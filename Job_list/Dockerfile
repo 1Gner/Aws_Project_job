@@ -2,7 +2,9 @@ FROM node:20 AS builder
 WORKDIR /app
 COPY . .
 RUN npm install
+RUN npm install -g @angular/cli
 RUN npm run build
+
 
 FROM nginx:alpine
 COPY --from=builder /app/dist/job-list/browser /usr/share/nginx/html

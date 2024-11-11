@@ -1,0 +1,12 @@
+List\Job\DTO\EmpresaDto.class
+List\Job\DTO\EmpregoDto.class
+List\Job\Repository\EmpregoRepository.class
+List\Job\Controller\EmpresaController.class
+List\Job\Controller\EmpregoController.class
+List\Job\Entities\Empresa.class
+List\Job\Service\EmpregoService.class
+List\Job\Entities\Emprego.class
+List\Job\Service\EmpresaService.class
+List\Job\Repository\EmpresaRepository.class
+List\Job\BackendListJobApplication.class
+List\Job\Configuration\WebConfig.class

@@ -1,8 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url('assets/fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ,wght.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}/* You can add global styles to this file, and also import other style files */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

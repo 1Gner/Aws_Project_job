@@ -5,6 +5,7 @@ import { DataService } from '../../services/api/data.service';
 import { map } from 'rxjs';
 import { FilterService } from '../../services/controller/filter.service';
 import { MiniCardFilterComponent } from '../mini-card-filter/mini-card-filter.component';
+import { SpamAddComponent } from "../spam-add/spam-add.component";
 
 
 
@@ -26,7 +27,7 @@ interface Empresa {
 @Component({
   selector: 'app-page-job',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SpamAddComponent],
   templateUrl: './page-job.component.html',
   styleUrl: './page-job.component.scss'
 })
@@ -35,8 +36,12 @@ export class PageJobComponent implements OnInit {
   ComponentMap = new Map<number, ComponentRef<CardJobComponent>>();
   SkillFilterMap = new Map<string, ComponentRef<MiniCardFilterComponent>>();
 
+  mostrarSpam:boolean = false;
+
+
   @ViewChild('job', { read: ViewContainerRef, static: true }) job!: ViewContainerRef;
   @ViewChild('filter', { read: ViewContainerRef, static: true }) filter!: ViewContainerRef;
+  
 
 
   constructor(private data: DataService, private filterService: FilterService) {
@@ -55,6 +60,10 @@ export class PageJobComponent implements OnInit {
         this.addOrUpdateComponent(value);
       })
     });
+
+    this.filterService.$status.subscribe(status => {
+      this.mostrarSpam = status;
+    })
 
 
 
@@ -127,6 +136,10 @@ export class PageJobComponent implements OnInit {
     this.filterService.removeAllSKill();
   }
 
+
+  showSpam() {
+    this.mostrarSpam = true;
+  }
 
 
 }

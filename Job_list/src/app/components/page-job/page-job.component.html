@@ -19,7 +19,19 @@
             <div class="jobs">
                 <div #job class="job"></div>
             </div>
+
+            <div class="add">
+                <button (click)='showSpam()'><p>+</p></button>
+            </div>
         </div>
     </div>
+
+
+    <div *ngIf="mostrarSpam" class="form">
+        <app-spam-add></app-spam-add>
+    </div>
+
+
+   
 
 </div>

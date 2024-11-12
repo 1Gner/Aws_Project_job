@@ -1,0 +1,66 @@
+<div class="card">
+
+
+    <div class="close">
+      <button (click)="closeSpam()"> X </button>
+    </div>
+
+    <div class="choice" *ngIf="choiceOpen">
+        <select name="" id="choice">
+            <option value="emprego">Emprego</option>
+            <option value="empresa">Empresa</option>
+        </select>
+        <button (click)="take_choice()">Enviar</button>
+    </div>
+
+    <div class="emprego" *ngIf="mostrarEmprego">
+        
+        <form [formGroup]="formularioEmprego"  class="form">
+            <div class="localizacao">
+              
+              <input formControlName="localizacao" placeholder="Localização" />
+            </div>
+          
+            <div class="tipo">
+              <input formControlName="tipo" placeholder="Tipo" />
+            </div>
+          
+            <div class="funcao">
+              <input formControlName="funcao" placeholder="Funcao" />
+            </div>
+          
+            <div class="nome_empresa">
+              <select formControlName="nome_empresa">
+                <option *ngFor="let entry of opcoes | keyvalue" [value]="entry.key">
+                  {{ entry.value }}
+                </option>
+              </select>
+            </div>
+          
+            <div class="skills">
+            
+              <input formControlName="skills"  placeholder="Habilidades"/>
+            </div>
+          
+            <button type="submit" class="enviar" (click)="EnviarEmprego()">Enviar</button>
+          </form>
+    </div>
+
+ 
+    <div class="empresa" *ngIf="mostrarEmpresa">
+        <form [formGroup]="formularioEmpresa" class="form">
+            <div>
+              
+              <input id="nome_empresa" formControlName="nome_empresa" type="text" placeholder="Nome da empresa" />
+            </div>
+          
+            <div>
+                <input type="file" id="file-upload" style="display: none;" (change)="onFileChange($event)" />
+                <label for="file-upload" id="file-upload-label">Selecione um arquivo</label>
+            
+            </div>
+          
+            <button type="submit" class="enviar" (click)="enviarEmpresa()">Enviar</button>
+          </form>
+    </div>
+</div>

@@ -14,6 +14,7 @@ interface Emprego {
 }
 
 interface Empresa {
+  id:number,
   nomeEmprese: string;
   photo: string;
   empregos: Emprego[];
@@ -39,6 +40,12 @@ export class FilterService {
   private $skills = new BehaviorSubject<Set<string>>(this.skills);
 
 
+  private status = new BehaviorSubject<boolean>(false);
+
+  $status = this.status.asObservable();
+
+  
+
   Init() {
     this.data.getDado().pipe(
       map(response => response.body)
@@ -48,6 +55,7 @@ export class FilterService {
         data.forEach((empresa: any) => {
 
           const novaEmpresa: Empresa = {
+            id:empresa.id,
             nomeEmprese: empresa.logo,
             photo: this.createImageFromBlob(empresa.foto),
             empregos: empresa.vagas.map((vaga: any): Emprego => ({
@@ -70,6 +78,7 @@ export class FilterService {
       complete: () => console.log('Requisição completada')
     });
   }
+
 
   getDatabese() {
     return this.$database.asObservable();
@@ -114,6 +123,11 @@ export class FilterService {
   removeAllSKill(){
     this.skills.clear();
     this.$skills.next(this.skills);
+  }
+
+
+  changeStatus(){
+    this.status.next(false);
   }
   
 }

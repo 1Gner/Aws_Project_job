@@ -17,8 +17,8 @@ export class DataService {
   }
 
 
-  private UrlEmpresa = 'http://localhost:8080/empresa'
-  private UrlEmprego = 'http://localhost:8080/emprego'
+  private UrlEmpresa = 'http://3.147.126.24:8080/empresa'
+  private UrlEmprego = 'http://3.147.126.24:8080/emprego'
 
 
   getDado(): Observable<any> {
